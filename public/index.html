@@ -10,7 +10,7 @@
   <!-- OGP -->
   <meta property="og:title" content="Kitasando Reserve — Tokyo Coffee Origin">
   <meta property="og:description" content="The origin of Tokyo Coffee. Refinement. Silence. Essence.">
-  <meta property="og:image" content="https://images.unsplash.com/photo-1615464637805-16154b4d5ea1?w=1200&q=80">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1551610290-e153ec567dd8?w=1200&q=80">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_US">
   <meta name="twitter:card" content="summary_large_image">
@@ -48,7 +48,7 @@
       --color-gray-warm: #4a3538;
       --color-gray-text: #b8a8a0;
       --color-wine: #5f414b;
-      --color-earth: #543f32;
+      --color-earth: #3e2a28;
       --font-heading: 'Cormorant Garamond', serif;
       --font-body: 'Noto Serif JP', serif;
     }
@@ -78,18 +78,39 @@
       background: #C5A55A;
     }
 
-    /* Section gradient backgrounds */
-    .bg-gradient-wine {
-      background: linear-gradient(160deg, #5f414b 0%, #3d2c30 50%, #2a1f24 100%);
+    /* Section gradient backgrounds — flowing top-to-bottom with subtle boundary steps */
+    /* Hero ends at #2a1f24 → Concept rises into wine */
+    .bg-flow-concept {
+      background: linear-gradient(180deg, #2a1f24 0%, #3d2c30 18%, #5f414b 50%, #443538 80%, #3b302c 100%);
     }
-    .bg-gradient-earth {
-      background: linear-gradient(160deg, #543f32 0%, #3a2b22 50%, #2a1f24 100%);
+    /* Concept bottom ~#3b302c → Story top #3b302c (smooth handoff) */
+    .bg-flow-story {
+      background: linear-gradient(180deg, #3b302c 0%, #322a26 25%, #2b2422 55%, #262120 100%);
     }
-    .bg-gradient-mixed {
-      background: linear-gradient(160deg, #4a3538 0%, #543f32 50%, #2a1f24 100%);
+    /* Step: Story bottom #352526 → Philosophy top #322428 (subtle darker shift) */
+    .bg-flow-philosophy {
+      background: linear-gradient(180deg, #322428 0%, #2f2226 30%, #2c2024 65%, #2a1f24 100%);
     }
-    .bg-gradient-deep {
-      background: linear-gradient(160deg, #2a1f24 0%, #3d2c30 50%, #5f414b 100%);
+    /* Step: Philosophy bottom #2a1f24 → Culture top #2c2024 (gentle lift) */
+    .bg-flow-culture {
+      background: linear-gradient(180deg, #2c2024 0%, #302327 30%, #382c30 60%, #3d2c30 100%);
+    }
+    /* Step: Culture bottom #3d2c30 → Collection top #402e32 (into wine callback) */
+    .bg-flow-collection {
+      background: linear-gradient(180deg, #402e32 0%, #4a3538 22%, #5f414b 48%, #4a3538 78%, #382a2e 100%);
+    }
+    /* Visit is image-based — overlay handles transition */
+    /* Step: Visit overlay → Access top #2e2226 */
+    .bg-flow-access {
+      background: linear-gradient(180deg, #2e2226 0%, #3a2c2a 28%, #3e2e2c 52%, #352828 82%, #2a1f24 100%);
+    }
+    /* Step: Access bottom #2a1f24 → FAQ top #2c2125 */
+    .bg-flow-faq {
+      background: linear-gradient(180deg, #2c2125 0%, #332628 32%, #352828 58%, #332628 100%);
+    }
+    /* Footer: deepest — step down from FAQ */
+    .bg-flow-footer {
+      background: linear-gradient(180deg, #231a1e 0%, #1e1519 50%, #1a1215 100%);
     }
 
     /* FAQ accordion */
@@ -102,13 +123,14 @@
       max-height: 500px;
     }
 
-    /* Hero parallax overlay */
+    /* Hero parallax overlay — bottom fades to solid #2a1f24 to match Concept top */
     .hero-overlay {
       background: linear-gradient(
         to bottom,
         rgba(42, 31, 36, 0.55) 0%,
-        rgba(42, 31, 36, 0.3) 40%,
-        rgba(42, 31, 36, 0.75) 100%
+        rgba(42, 31, 36, 0.25) 35%,
+        rgba(42, 31, 36, 0.6) 70%,
+        rgba(42, 31, 36, 0.95) 100%
       );
     }
 
@@ -119,7 +141,28 @@
       background-color: rgba(42, 31, 36, 0.8);
     }
 
+    /* Soft image decoration */
+    .img-soft {
+      border-radius: 1rem;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
+    }
+    .img-soft:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+    }
+
     /* Collection card hover */
+    .collection-card {
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+    .collection-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+    }
     .collection-card:hover .collection-overlay {
       opacity: 1;
     }
@@ -186,20 +229,17 @@
   <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
     <!-- Background image -->
     <div class="absolute inset-0">
-      <img src="https://images.unsplash.com/photo-1615464637805-16154b4d5ea1?w=1920&q=80&fm=webp&fit=crop"
-           alt="Dark coffee atmosphere" class="w-full h-full object-cover" loading="eager" decoding="async">
+      <img src="https://images.unsplash.com/photo-1551610290-e153ec567dd8?w=1920&q=80&fm=webp&fit=crop"
+           alt="Dark espresso coffee atmosphere" class="w-full h-full object-cover" loading="eager" decoding="async">
       <div class="hero-overlay absolute inset-0"></div>
     </div>
 
     <!-- Hero content -->
     <div class="relative z-10 text-center px-6">
-      <div class="animate__animated animate__fadeIn animate__delay-1s">
-        <img src="assets/images/KitasandoLOGO_Gold.jpg" alt="KR Emblem" class="w-20 h-20 lg:w-28 lg:h-28 mx-auto mb-10 object-contain" loading="eager">
-      </div>
-      <h1 class="animate__animated animate__fadeInUp animate__delay-1s font-heading text-4xl md:text-6xl lg:text-7xl font-light text-cream mb-6" style="letter-spacing: 0.04em;">
+      <h1 class="animate__animated animate__fadeInUp animate__delay-1s font-heading text-4xl md:text-6xl lg:text-7xl font-light text-cream mb-2 mt-36 lg:mt-44" style="letter-spacing: 0.04em;">
         Tokyo Coffee Origin
       </h1>
-      <p class="animate__animated animate__fadeInUp animate__delay-2s font-heading text-lg md:text-xl lg:text-2xl font-light text-gold mb-20" style="letter-spacing: 0.08em;">
+      <p class="animate__animated animate__fadeInUp animate__delay-2s font-heading text-2xl md:text-4xl lg:text-5xl font-light text-gold mb-20" style="letter-spacing: 0.08em;">
         Kitasando Reserve
       </p>
       <!-- Scroll indicator -->
@@ -213,20 +253,22 @@
   <!-- ============================================ -->
   <!-- CONCEPT SECTION -->
   <!-- ============================================ -->
-  <section id="concept" class="py-32 lg:py-48 bg-gradient-wine">
-    <div class="max-w-6xl mx-auto px-8 lg:px-16">
+  <section id="concept" class="py-20 lg:py-28 bg-flow-concept">
+    <div class="max-w-4xl mx-auto px-8 lg:px-16">
       <!-- Section label -->
       <div class="mb-16" data-aos="fade-up">
         <span class="text-xs tracking-luxe text-gold uppercase">01 — Concept</span>
       </div>
 
-      <!-- Two-column layout -->
-      <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+      <!-- Section title -->
+      <h2 class="font-heading text-4xl md:text-5xl lg:text-6xl font-light text-cream mb-12 text-center" data-aos="fade-up">
+        What is Tokyo Coffee?
+      </h2>
+
+      <!-- Two-column layout: text + image -->
+      <div class="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
         <!-- Left: text -->
         <div data-aos="fade-right" data-aos-delay="200">
-          <h2 class="font-heading text-4xl md:text-5xl lg:text-6xl font-light text-cream mb-8 leading-tight">
-            What is<br>Tokyo Coffee?
-          </h2>
           <div class="gold-line mb-8"></div>
           <p class="text-base lg:text-lg text-gray-text leading-relaxed mb-6 font-body">
             Tokyo Coffee is not defined by a single style, but by refinement, balance, and intention. It is where global coffee culture is reinterpreted through a uniquely Tokyo perspective — minimal, precise, and quietly sophisticated.
@@ -238,12 +280,10 @@
 
         <!-- Right: image -->
         <div data-aos="fade-left" data-aos-delay="400" class="relative">
-          <div class="aspect-[3/4] overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1613158556069-e7d8eae76214?w=800&q=80&fm=webp&fit=crop"
-                 alt="Pour over coffee preparation" class="w-full h-full object-cover" loading="lazy" decoding="async">
+          <div class="aspect-[3/2] overflow-hidden img-soft">
+            <img src="https://images.unsplash.com/photo-1497515114629-f71d768fd07c?w=800&q=80&fm=webp&fit=crop"
+                 alt="Coffee beans dark roast" class="w-full h-full object-cover" loading="lazy" decoding="async">
           </div>
-          <!-- Gold accent line -->
-          <div class="absolute -bottom-4 -right-4 w-24 h-24 border-r border-b border-gold/30"></div>
         </div>
       </div>
     </div>
@@ -252,8 +292,8 @@
   <!-- ============================================ -->
   <!-- STORY SECTION -->
   <!-- ============================================ -->
-  <section id="story" class="py-32 lg:py-48 bg-gradient-earth">
-    <div class="max-w-6xl mx-auto px-8 lg:px-16">
+  <section id="story" class="py-20 lg:py-28 bg-flow-story">
+    <div class="max-w-4xl mx-auto px-8 lg:px-16">
       <!-- Section label -->
       <div class="mb-16" data-aos="fade-up">
         <span class="text-xs tracking-luxe text-gold uppercase">02 — Story</span>
@@ -264,10 +304,10 @@
       </h2>
 
       <!-- Story blocks -->
-      <div class="space-y-32">
+      <div class="space-y-16 lg:space-y-20">
 
         <!-- Block 1: Why Kitasando -->
-        <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div class="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
           <div class="order-2 lg:order-1" data-aos="fade-right">
             <span class="text-xs tracking-luxe text-gold/60 uppercase mb-4 block">Why Kitasando</span>
             <h3 class="font-heading text-3xl md:text-4xl font-light text-cream mb-6 leading-tight">
@@ -279,19 +319,19 @@
             </p>
           </div>
           <div class="order-1 lg:order-2" data-aos="fade-left">
-            <div class="aspect-[4/3] overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1769870724969-461f5c22d76f?w=800&q=80&fm=webp&fit=crop"
-                   alt="Quiet Tokyo alley" class="w-full h-full object-cover" loading="lazy" decoding="async">
+            <div class="aspect-[4/3] overflow-hidden img-soft">
+              <img src="https://images.unsplash.com/photo-1712416382639-2af20e681383?w=800&q=80&fm=webp&fit=crop"
+                   alt="Quiet Tokyo shrine in warm evening light" class="w-full h-full object-cover" loading="lazy" decoding="async">
             </div>
           </div>
         </div>
 
         <!-- Block 2: Why Tokyo -->
-        <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div class="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
           <div data-aos="fade-right">
-            <div class="aspect-[4/3] overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1735529576684-963c6baf23a0?w=800&q=80&fm=webp&fit=crop"
-                   alt="Modern Tokyo skyline" class="w-full h-full object-cover" loading="lazy" decoding="async">
+            <div class="aspect-[4/3] overflow-hidden img-soft">
+              <img src="https://images.unsplash.com/photo-1615049364575-de41cf3db694?w=800&q=80&fm=webp&fit=crop"
+                   alt="Tokyo skyline at golden hour" class="w-full h-full object-cover" loading="lazy" decoding="async">
             </div>
           </div>
           <div data-aos="fade-left">
@@ -307,7 +347,7 @@
         </div>
 
         <!-- Block 3: Why Kitasando Reserve -->
-        <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div class="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
           <div class="order-2 lg:order-1" data-aos="fade-right">
             <span class="text-xs tracking-luxe text-gold/60 uppercase mb-4 block">Why Kitasando Reserve</span>
             <h3 class="font-heading text-3xl md:text-4xl font-light text-cream mb-6 leading-tight">
@@ -319,8 +359,8 @@
             </p>
           </div>
           <div class="order-1 lg:order-2" data-aos="fade-left">
-            <div class="aspect-[4/3] overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1575724494215-e1baede6fa4a?w=800&q=80&fm=webp&fit=crop"
+            <div class="aspect-[4/3] overflow-hidden img-soft">
+              <img src="https://images.unsplash.com/photo-1745152839498-92c0799ff8d6?w=800&q=80&fm=webp&fit=crop"
                    alt="Specialty coffee roasting" class="w-full h-full object-cover" loading="lazy" decoding="async">
             </div>
           </div>
@@ -332,7 +372,7 @@
   <!-- ============================================ -->
   <!-- PHILOSOPHY SECTION -->
   <!-- ============================================ -->
-  <section id="philosophy" class="py-32 lg:py-48 bg-gradient-mixed">
+  <section id="philosophy" class="py-20 lg:py-28 bg-flow-philosophy">
     <div class="max-w-5xl mx-auto px-8 lg:px-16">
       <!-- Section label -->
       <div class="mb-20" data-aos="fade-up">
@@ -350,9 +390,9 @@
       <div class="grid md:grid-cols-3 gap-12 lg:gap-20">
         <!-- Refinement -->
         <div class="text-center group" data-aos="fade-up" data-aos-delay="100">
-          <div class="w-32 h-32 lg:w-40 lg:h-40 mx-auto overflow-hidden rounded-full mb-10 relative">
-            <img src="https://images.unsplash.com/photo-1758637612226-97ceebff95a4?w=400&q=80&fm=webp&fit=crop"
-                 alt="Zen minimal aesthetic" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" decoding="async">
+          <div class="w-40 h-40 lg:w-52 lg:h-52 mx-auto overflow-hidden rounded-full mb-10 relative" style="box-shadow: 0 8px 30px rgba(0,0,0,0.2);">
+            <img src="https://images.unsplash.com/photo-1580933073521-dc49ac0d4e6a?w=400&q=80&fm=webp&fit=crop"
+                 alt="Refined simplicity" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" decoding="async">
           </div>
           <h3 class="font-heading text-2xl lg:text-3xl font-light text-gold tracking-wide-luxe mb-5">Refinement</h3>
           <p class="text-sm text-gray-text leading-loose font-body max-w-[240px] mx-auto">
@@ -362,9 +402,9 @@
 
         <!-- Silence -->
         <div class="text-center group" data-aos="fade-up" data-aos-delay="250">
-          <div class="w-32 h-32 lg:w-40 lg:h-40 mx-auto overflow-hidden rounded-full mb-10 relative">
-            <img src="https://images.unsplash.com/photo-1689164255885-d172a4f5fc4c?w=400&q=80&fm=webp&fit=crop"
-                 alt="Artistic coffee cup with steam" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" decoding="async">
+          <div class="w-40 h-40 lg:w-52 lg:h-52 mx-auto overflow-hidden rounded-full mb-10 relative" style="box-shadow: 0 8px 30px rgba(0,0,0,0.2);">
+            <img src="https://images.unsplash.com/photo-1510707577719-ae7c14805e3a?w=400&q=80&fm=webp&fit=crop"
+                 alt="Espresso in warm light" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" decoding="async">
           </div>
           <h3 class="font-heading text-2xl lg:text-3xl font-light text-gold tracking-wide-luxe mb-5">Silence</h3>
           <p class="text-sm text-gray-text leading-loose font-body max-w-[240px] mx-auto">
@@ -374,9 +414,9 @@
 
         <!-- Essence -->
         <div class="text-center group" data-aos="fade-up" data-aos-delay="400">
-          <div class="w-32 h-32 lg:w-40 lg:h-40 mx-auto overflow-hidden rounded-full mb-10 relative">
-            <img src="https://images.unsplash.com/photo-1710082336769-618ecffe6e7f?w=400&q=80&fm=webp&fit=crop"
-                 alt="Coffee beans close up" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" decoding="async">
+          <div class="w-40 h-40 lg:w-52 lg:h-52 mx-auto overflow-hidden rounded-full mb-10 relative" style="box-shadow: 0 8px 30px rgba(0,0,0,0.2);">
+            <img src="https://images.unsplash.com/photo-1512568400610-62da28bc8a13?w=400&q=80&fm=webp&fit=crop"
+                 alt="Coffee essence pour" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" decoding="async">
           </div>
           <h3 class="font-heading text-2xl lg:text-3xl font-light text-gold tracking-wide-luxe mb-5">Essence</h3>
           <p class="text-sm text-gray-text leading-loose font-body max-w-[240px] mx-auto">
@@ -390,7 +430,7 @@
   <!-- ============================================ -->
   <!-- CULTURE SECTION -->
   <!-- ============================================ -->
-  <section id="culture" class="py-32 lg:py-48 bg-gradient-deep">
+  <section id="culture" class="py-20 lg:py-28 bg-flow-culture">
     <div class="max-w-6xl mx-auto px-8 lg:px-16">
       <!-- Section label -->
       <div class="mb-16" data-aos="fade-up">
@@ -407,22 +447,22 @@
       </div>
 
       <!-- Photo grid -->
-      <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-4">
-        <div class="aspect-square overflow-hidden" data-aos="fade-up" data-aos-delay="100">
-          <img src="https://images.unsplash.com/photo-1743148509625-9dad6e80ea6c?w=800&q=80&fm=webp&fit=crop"
-               alt="Tokyo cafe interior" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
+        <div class="aspect-square overflow-hidden img-soft" data-aos="fade-up" data-aos-delay="100">
+          <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800&q=80&fm=webp&fit=crop"
+               alt="Warm cafe interior" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async">
         </div>
-        <div class="aspect-square overflow-hidden" data-aos="fade-up" data-aos-delay="200">
-          <img src="https://images.unsplash.com/photo-1621865091587-42f462729948?w=800&q=80&fm=webp&fit=crop"
-               alt="Barista creating latte art" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async">
+        <div class="aspect-square overflow-hidden img-soft" data-aos="fade-up" data-aos-delay="200">
+          <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?w=800&q=80&fm=webp&fit=crop"
+               alt="Latte art" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async">
         </div>
-        <div class="aspect-square overflow-hidden" data-aos="fade-up" data-aos-delay="300">
-          <img src="https://images.unsplash.com/photo-1773632368022-26b80224be29?w=800&q=80&fm=webp&fit=crop"
-               alt="Japanese pour over coffee" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async">
+        <div class="aspect-square overflow-hidden img-soft" data-aos="fade-up" data-aos-delay="300">
+          <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80&fm=webp&fit=crop"
+               alt="Coffee on table" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async">
         </div>
-        <div class="aspect-square overflow-hidden" data-aos="fade-up" data-aos-delay="400">
-          <img src="https://images.unsplash.com/photo-1755884931646-ae6e1d227717?w=800&q=80&fm=webp&fit=crop"
-               alt="Cozy minimal coffee shop" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async">
+        <div class="aspect-square overflow-hidden img-soft" data-aos="fade-up" data-aos-delay="400">
+          <img src="https://images.unsplash.com/photo-1553292218-4892c2e7e1ae?w=800&q=80&fm=webp&fit=crop"
+               alt="Tokyo coffee culture" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async">
         </div>
       </div>
 
@@ -438,7 +478,7 @@
   <!-- ============================================ -->
   <!-- COLLECTION SECTION -->
   <!-- ============================================ -->
-  <section id="collection" class="py-32 lg:py-48 bg-gradient-wine">
+  <section id="collection" class="py-20 lg:py-28 bg-flow-collection">
     <div class="max-w-5xl mx-auto px-8 lg:px-16">
       <!-- Section label -->
       <div class="mb-20" data-aos="fade-up">
@@ -454,108 +494,84 @@
         </p>
       </div>
 
-      <!-- Collection grid (lookbook style) - more spacing -->
-      <div class="grid grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
+      <!-- Collection grid (card style with info below) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
 
         <!-- Reserve Blend -->
-        <div class="collection-card group relative" data-aos="fade-up" data-aos-delay="100">
-          <div class="aspect-[3/4] overflow-hidden bg-gray-warm relative">
-            <img src="https://images.unsplash.com/photo-1596253420615-f54837f5141f?w=800&q=80&fm=webp&fit=crop"
+        <div class="collection-card group" data-aos="fade-up" data-aos-delay="100">
+          <div class="aspect-[16/10] overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=800&q=80&fm=webp&fit=crop"
                  alt="Reserve Blend" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async">
-            <div class="collection-overlay absolute inset-0 bg-black-primary/60 opacity-0 transition-opacity duration-500 flex items-end p-6">
-              <div>
-                <span class="text-xs tracking-luxe text-gold uppercase block mb-2">Signature</span>
-                <p class="text-sm text-cream/80 font-body">The definitive expression. Balanced, refined, unmistakable.</p>
-              </div>
-            </div>
           </div>
-          <div class="mt-4">
-            <h3 class="font-heading text-xl lg:text-2xl text-cream font-light">Reserve Blend</h3>
+          <div class="p-6 bg-cream/5">
+            <span class="inline-block text-xs tracking-luxe text-gold border border-gold/40 rounded-full px-4 py-1 mb-4 uppercase">Signature</span>
+            <h3 class="font-heading text-2xl lg:text-3xl text-cream font-light mb-2">Reserve Blend</h3>
+            <p class="text-sm text-gray-text font-body leading-relaxed">The definitive expression. Balanced, refined, unmistakable.</p>
           </div>
         </div>
 
         <!-- Morning Blend -->
-        <div class="collection-card group relative" data-aos="fade-up" data-aos-delay="200">
-          <div class="aspect-[3/4] overflow-hidden bg-gray-warm relative">
-            <img src="https://images.unsplash.com/photo-1613158556069-e7d8eae76214?w=800&q=80&fm=webp&fit=crop"
-                 alt="Morning Blend" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 brightness-110" loading="lazy" decoding="async">
-            <div class="collection-overlay absolute inset-0 bg-black-primary/60 opacity-0 transition-opacity duration-500 flex items-end p-6">
-              <div>
-                <span class="text-xs tracking-luxe text-gold uppercase block mb-2">Dawn</span>
-                <p class="text-sm text-cream/80 font-body">Light, bright, awakening. The first moment of clarity.</p>
-              </div>
-            </div>
+        <div class="collection-card group" data-aos="fade-up" data-aos-delay="200">
+          <div class="aspect-[16/10] overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?w=800&q=80&fm=webp&fit=crop"
+                 alt="Morning Blend" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async">
           </div>
-          <div class="mt-4">
-            <h3 class="font-heading text-xl lg:text-2xl text-cream font-light">Morning Blend</h3>
+          <div class="p-6 bg-cream/5">
+            <span class="inline-block text-xs tracking-luxe text-gold border border-gold/40 rounded-full px-4 py-1 mb-4 uppercase">Dawn</span>
+            <h3 class="font-heading text-2xl lg:text-3xl text-cream font-light mb-2">Morning Blend</h3>
+            <p class="text-sm text-gray-text font-body leading-relaxed">Light, bright, awakening. The first moment of clarity.</p>
           </div>
         </div>
 
         <!-- Classic Blend -->
-        <div class="collection-card group relative" data-aos="fade-up" data-aos-delay="300">
-          <div class="aspect-[3/4] overflow-hidden bg-gray-warm relative">
-            <img src="https://images.unsplash.com/photo-1689164255885-d172a4f5fc4c?w=800&q=80&fm=webp&fit=crop"
+        <div class="collection-card group" data-aos="fade-up" data-aos-delay="300">
+          <div class="aspect-[16/10] overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800&q=80&fm=webp&fit=crop"
                  alt="Classic Blend" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async">
-            <div class="collection-overlay absolute inset-0 bg-black-primary/60 opacity-0 transition-opacity duration-500 flex items-end p-6">
-              <div>
-                <span class="text-xs tracking-luxe text-gold uppercase block mb-2">Timeless</span>
-                <p class="text-sm text-cream/80 font-body">A return to what endures. Familiar yet never ordinary.</p>
-              </div>
-            </div>
           </div>
-          <div class="mt-4">
-            <h3 class="font-heading text-xl lg:text-2xl text-cream font-light">Classic Blend</h3>
+          <div class="p-6 bg-cream/5">
+            <span class="inline-block text-xs tracking-luxe text-gold border border-gold/40 rounded-full px-4 py-1 mb-4 uppercase">Classic</span>
+            <h3 class="font-heading text-2xl lg:text-3xl text-cream font-light mb-2">Classic Blend</h3>
+            <p class="text-sm text-gray-text font-body leading-relaxed">A return to what endures. Familiar yet never ordinary.</p>
           </div>
         </div>
 
         <!-- Dark Roast -->
-        <div class="collection-card group relative" data-aos="fade-up" data-aos-delay="100">
-          <div class="aspect-[3/4] overflow-hidden bg-gray-warm relative">
-            <img src="https://images.unsplash.com/photo-1710082336769-618ecffe6e7f?w=800&q=80&fm=webp&fit=crop"
+        <div class="collection-card group" data-aos="fade-up" data-aos-delay="100">
+          <div class="aspect-[16/10] overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1559525839-b184a4d698c7?w=800&q=80&fm=webp&fit=crop"
                  alt="Dark Roast" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async">
-            <div class="collection-overlay absolute inset-0 bg-black-primary/60 opacity-0 transition-opacity duration-500 flex items-end p-6">
-              <div>
-                <span class="text-xs tracking-luxe text-gold uppercase block mb-2">Depth</span>
-                <p class="text-sm text-cream/80 font-body">Bold, deep, resonant. For those who seek intensity with grace.</p>
-              </div>
-            </div>
           </div>
-          <div class="mt-4">
-            <h3 class="font-heading text-xl lg:text-2xl text-cream font-light">Dark Roast</h3>
+          <div class="p-6 bg-cream/5">
+            <span class="inline-block text-xs tracking-luxe text-gold border border-gold/40 rounded-full px-4 py-1 mb-4 uppercase">Depth</span>
+            <h3 class="font-heading text-2xl lg:text-3xl text-cream font-light mb-2">Dark Roast</h3>
+            <p class="text-sm text-gray-text font-body leading-relaxed">Bold, deep, resonant. For those who seek intensity with grace.</p>
           </div>
         </div>
 
         <!-- Seasonal -->
-        <div class="collection-card group relative" data-aos="fade-up" data-aos-delay="200">
-          <div class="aspect-[3/4] overflow-hidden bg-gray-warm relative">
-            <img src="https://images.unsplash.com/photo-1575724494215-e1baede6fa4a?w=800&q=80&fm=webp&fit=crop"
+        <div class="collection-card group" data-aos="fade-up" data-aos-delay="200">
+          <div class="aspect-[16/10] overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1507133750040-4a8f57021571?w=800&q=80&fm=webp&fit=crop"
                  alt="Seasonal Blend" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async">
-            <div class="collection-overlay absolute inset-0 bg-black-primary/60 opacity-0 transition-opacity duration-500 flex items-end p-6">
-              <div>
-                <span class="text-xs tracking-luxe text-gold uppercase block mb-2">Ephemeral</span>
-                <p class="text-sm text-cream/80 font-body">A limited offering that captures the character of the season.</p>
-              </div>
-            </div>
           </div>
-          <div class="mt-4">
-            <h3 class="font-heading text-xl lg:text-2xl text-cream font-light">Seasonal</h3>
+          <div class="p-6 bg-cream/5">
+            <span class="inline-block text-xs tracking-luxe text-gold border border-gold/40 rounded-full px-4 py-1 mb-4 uppercase">Seasonal</span>
+            <h3 class="font-heading text-2xl lg:text-3xl text-cream font-light mb-2">Seasonal</h3>
+            <p class="text-sm text-gray-text font-body leading-relaxed">A limited offering that captures the character of the season.</p>
           </div>
         </div>
 
         <!-- Pet Blend -->
-        <div class="collection-card group relative" data-aos="fade-up" data-aos-delay="300">
-          <div class="aspect-[3/4] overflow-hidden bg-gray-warm relative">
-            <img src="https://images.unsplash.com/photo-1773632368022-26b80224be29?w=800&q=80&fm=webp&fit=crop"
-                 alt="Pet Blend" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 sepia-[.15]" loading="lazy" decoding="async">
-            <div class="collection-overlay absolute inset-0 bg-black-primary/60 opacity-0 transition-opacity duration-500 flex items-end p-6">
-              <div>
-                <span class="text-xs tracking-luxe text-gold uppercase block mb-2">Companion</span>
-                <p class="text-sm text-cream/80 font-body">Crafted for the moments shared with those who matter most.</p>
-              </div>
-            </div>
+        <div class="collection-card group" data-aos="fade-up" data-aos-delay="300">
+          <div class="aspect-[16/10] overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1632772341241-51e975ae8f65?w=800&q=80&fm=webp&fit=crop"
+                 alt="Pet Blend" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async">
           </div>
-          <div class="mt-4">
-            <h3 class="font-heading text-xl lg:text-2xl text-cream font-light">Pet Blend</h3>
+          <div class="p-6 bg-cream/5">
+            <span class="inline-block text-xs tracking-luxe text-gold border border-gold/40 rounded-full px-4 py-1 mb-4 uppercase">Companion</span>
+            <h3 class="font-heading text-2xl lg:text-3xl text-cream font-light mb-2">Pet Blend</h3>
+            <p class="text-sm text-gray-text font-body leading-relaxed">Crafted for the moments shared with those who matter most.</p>
           </div>
         </div>
       </div>
@@ -565,12 +581,12 @@
   <!-- ============================================ -->
   <!-- VISIT SECTION -->
   <!-- ============================================ -->
-  <section id="visit" class="relative py-24 lg:py-40 overflow-hidden">
+  <section id="visit" class="relative py-20 lg:py-28 overflow-hidden">
     <!-- Background image -->
     <div class="absolute inset-0">
-      <img src="https://images.unsplash.com/photo-1603483745087-6a97579fe289?w=1920&q=80&fm=webp&fit=crop"
-           alt="Warm coffee shop interior" class="w-full h-full object-cover" loading="lazy" decoding="async">
-      <div class="absolute inset-0 bg-black-primary/75"></div>
+      <img src="https://images.unsplash.com/photo-1596765513731-558f6581360b?w=1920&q=85&fm=webp&fit=crop"
+           alt="Luxury hotel lounge with elegant lighting" class="w-full h-full object-cover" loading="lazy" decoding="async">
+      <div class="absolute inset-0" style="background: linear-gradient(180deg, rgba(56,42,46,0.88) 0%, rgba(42,31,36,0.82) 40%, rgba(46,34,38,0.92) 100%);"></div>
     </div>
 
     <div class="relative z-10 max-w-3xl mx-auto px-8 lg:px-16 text-center">
@@ -593,19 +609,23 @@
   <!-- ============================================ -->
   <!-- ACCESS SECTION -->
   <!-- ============================================ -->
-  <section id="access" class="py-32 lg:py-48 bg-gradient-earth">
-    <div class="max-w-6xl mx-auto px-8 lg:px-16">
+  <section id="access" class="py-20 lg:py-28 bg-flow-access">
+    <div class="max-w-4xl mx-auto px-8 lg:px-16">
       <!-- Section label -->
       <div class="mb-16" data-aos="fade-up">
         <span class="text-xs tracking-luxe text-gold uppercase">07 — Access</span>
       </div>
 
+      <h2 class="font-heading text-4xl md:text-5xl lg:text-6xl font-light text-cream mb-16 text-center" data-aos="fade-up">
+        Find Us
+      </h2>
+
       <div class="grid lg:grid-cols-2 gap-12 lg:gap-20">
         <!-- Left: info -->
         <div data-aos="fade-right">
-          <img src="assets/images/KitasandoReserve-white.jpg" alt="Kitasando Reserve" class="h-8 mb-10" loading="lazy" decoding="async">
+          <img src="assets/images/KitasandoReserve-white.jpg" alt="Kitasando Reserve" class="h-8 mb-4" loading="lazy" decoding="async">
 
-          <div class="space-y-8">
+          <div class="space-y-2">
             <!-- Address -->
             <div class="flex items-start gap-4">
               <i data-lucide="map-pin" class="w-5 h-5 text-gold mt-1 flex-shrink-0"></i>
@@ -677,8 +697,8 @@
         <div data-aos="fade-left" class="flex items-center">
           <div class="w-full aspect-[4/3] lg:aspect-square overflow-hidden rounded-sm">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.7!2d139.707!3d35.6789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188cb5b0e13b27%3A0xab5b2d4e8c7a9c00!2z5Y2D6aeE44O26LC3My0zMC0x!5e0!3m2!1sja!2sjp!4v1700000000000!5m2!1sja!2sjp"
-              width="100%" height="100%" style="border:0; filter: grayscale(80%) invert(92%) contrast(83%);"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.7!2d139.707!3d35.6789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188cb5b0e13b27%3A0xab5b2d4e8c7a9c00!2z5Y2D6aeE44O26LC3My0zMC0x!5e0!3m2!1sja!2sjp!4v1700000000000!5m2!1sja!2sjp&maptype=roadmap"
+              width="100%" height="100%" style="border:0; filter: brightness(0.65) saturate(0.8);"
               allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
               title="Kitasando Reserve location map">
             </iframe>
@@ -691,14 +711,14 @@
   <!-- ============================================ -->
   <!-- FAQ SECTION -->
   <!-- ============================================ -->
-  <section id="faq" class="py-32 lg:py-48 bg-gradient-mixed">
+  <section id="faq" class="py-20 lg:py-28 bg-flow-faq">
     <div class="max-w-3xl mx-auto px-8 lg:px-16">
       <!-- Section label -->
       <div class="mb-16" data-aos="fade-up">
         <span class="text-xs tracking-luxe text-gold uppercase">08 — FAQ</span>
       </div>
 
-      <h2 class="font-heading text-4xl md:text-5xl font-light text-cream mb-16 text-center" data-aos="fade-up">
+      <h2 class="font-heading text-4xl md:text-5xl lg:text-6xl font-light text-cream mb-16 text-center" data-aos="fade-up">
         Questions
       </h2>
 
@@ -842,10 +862,10 @@
   <!-- ============================================ -->
   <!-- FOOTER -->
   <!-- ============================================ -->
-  <footer class="py-24 lg:py-32 bg-gradient-earth border-t border-white/5">
+  <footer class="py-16 lg:py-24 bg-flow-footer border-t border-white/5">
     <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
       <!-- Gold emblem -->
-      <img src="assets/images/KitasandoLOGO_Gold.jpg" alt="Kitasando Reserve emblem" class="w-16 h-16 mx-auto mb-8 object-contain" loading="lazy" decoding="async">
+      <img src="assets/images/KitasandoLOGO_Gold.jpg" alt="Kitasando Reserve emblem" class="w-16 h-16 mx-auto mb-8 object-cover rounded-full" loading="lazy" decoding="async">
 
       <!-- Brand name -->
       <p class="font-heading text-2xl lg:text-3xl text-cream tracking-wide-luxe mb-3">Kitasando Reserve</p>
