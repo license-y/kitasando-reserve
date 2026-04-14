@@ -95,9 +95,9 @@
     .bg-flow-culture {
       background: linear-gradient(180deg, #2c2024 0%, #302327 30%, #382c30 60%, #3d2c30 100%);
     }
-    /* Step: Culture bottom #3d2c30 → Collection top #402e32 (into wine callback) */
+    /* Step: Culture bottom #3d2c30 → Collection top #402e32 — mid shifted to espresso brown for package harmony */
     .bg-flow-collection {
-      background: linear-gradient(180deg, #402e32 0%, #4a3538 22%, #5f414b 48%, #4a3538 78%, #382a2e 100%);
+      background: linear-gradient(180deg, #28201e 0%, #362c28 20%, #3e3028 45%, #342c2a 72%, #26201e 100%);
     }
     /* Visit is image-based — overlay handles transition */
     /* Step: Visit overlay → Access top #2e2226 */
@@ -156,7 +156,9 @@
     .collection-card {
       border-radius: 1rem;
       overflow: hidden;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+      background-color: #1e1a18;
+      border: 1.5px solid rgba(197, 165, 90, 0.35);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5), 0 4px 12px rgba(0, 0, 0, 0.3);
       transition: transform 0.4s ease, box-shadow 0.4s ease;
       display: flex;
       flex-direction: column;
