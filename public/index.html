@@ -56,7 +56,7 @@
 
   <style>
     /* Smooth scroll */
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
 
     /* Base styles */
     body {
@@ -545,7 +545,7 @@
       </div>
 
       <!-- Collection grid: 4+3 layout -->
-      <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
 
         <!-- 1. Reserve Blend -->
         <div class="collection-card group" data-aos="fade-up" data-aos-delay="100">
@@ -573,13 +573,13 @@
                  alt="Morning Blend" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async">
           </div>
           <div class="p-4 bg-cream/5">
-            <span class="inline-block text-xs tracking-luxe text-gold border border-gold/40 rounded-full px-3 py-1 mb-3 uppercase">Mild</span>
+            <span class="inline-block text-xs tracking-luxe text-gold border border-gold/40 rounded-full px-3 py-1 mb-3 uppercase">Fruity</span>
             <h3 class="font-heading text-xl lg:text-2xl text-cream font-light mb-1 min-h-[3.5rem]">Morning Blend</h3>
             <p class="text-xs text-gray-text font-body leading-relaxed mb-3 min-h-[3rem]">A bright beginning with clarity and ease.</p>
             <dl class="text-xs text-gray-text/70 space-y-1">
-              <div><dt class="inline text-gold/60">Best for:</dt> <dd class="inline">Everyday ritual</dd></div>
-              <div><dt class="inline text-gold/60">Taste:</dt> <dd class="inline">Clean, lively, gently sweet</dd></div>
-              <div><dt class="inline text-gold/60">Tokyo mood:</dt> <dd class="inline">Calm morning light</dd></div>
+              <div><dt class="inline text-gold/60">Best for:</dt> <dd class="inline">Those who enjoy an unexpected brightness</dd></div>
+              <div><dt class="inline text-gold/60">Taste:</dt> <dd class="inline">Clean, lively, gently sweet with a fruit-forward lift</dd></div>
+              <div><dt class="inline text-gold/60">Tokyo mood:</dt> <dd class="inline">Calm morning light, fresh and unhurried</dd></div>
               <div><dt class="inline text-gold/60">Gift impression:</dt> <dd class="inline">The gift of a perfect first moment</dd></div>
             </dl>
           </div>
@@ -592,13 +592,13 @@
                  alt="Classic Blend" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async">
           </div>
           <div class="p-4 bg-cream/5">
-            <span class="inline-block text-xs tracking-luxe text-gold border border-gold/40 rounded-full px-3 py-1 mb-3 uppercase">Mild</span>
+            <span class="inline-block text-xs tracking-luxe text-gold border border-gold/40 rounded-full px-3 py-1 mb-3 uppercase">Bitter</span>
             <h3 class="font-heading text-xl lg:text-2xl text-cream font-light mb-1 min-h-[3.5rem]">Classic Blend</h3>
-            <p class="text-xs text-gray-text font-body leading-relaxed mb-3 min-h-[3rem]">Familiar in name. Unexpectedly bright in the cup.</p>
+            <p class="text-xs text-gray-text font-body leading-relaxed mb-3 min-h-[3rem]">Depth that endures. The bold heart of a timeless cup.</p>
             <dl class="text-xs text-gray-text/70 space-y-1">
               <div><dt class="inline text-gold/60">Best for:</dt> <dd class="inline">Those who return to what endures</dd></div>
-              <div><dt class="inline text-gold/60">Taste:</dt> <dd class="inline">Warm, balanced, quietly familiar</dd></div>
-              <div><dt class="inline text-gold/60">Tokyo mood:</dt> <dd class="inline">Timeless and unhurried</dd></div>
+              <div><dt class="inline text-gold/60">Taste:</dt> <dd class="inline">Full-bodied, richly bitter, with a long resonant finish</dd></div>
+              <div><dt class="inline text-gold/60">Tokyo mood:</dt> <dd class="inline">Timeless and quietly powerful</dd></div>
               <div><dt class="inline text-gold/60">Gift impression:</dt> <dd class="inline">The coffee you will always come back to</dd></div>
             </dl>
           </div>
@@ -607,7 +607,7 @@
         <!-- 4. Dark Roast -->
         <div class="collection-card group" data-aos="fade-up" data-aos-delay="250">
           <div class="aspect-square overflow-hidden">
-            <img src="assets/images/collection/4_dark-roast-blend.jpg"
+            <img src="assets/images/collection/4_dark-roast.jpg"
                  alt="Dark Roast" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async">
           </div>
           <div class="p-4 bg-cream/5">
@@ -615,7 +615,7 @@
             <h3 class="font-heading text-xl lg:text-2xl text-cream font-light mb-1 min-h-[3.5rem]">Dark Roast</h3>
             <p class="text-xs text-gray-text font-body leading-relaxed mb-3 min-h-[3rem]">Depth, structure, and quiet intensity.</p>
             <dl class="text-xs text-gray-text/70 space-y-1">
-              <div><dt class="inline text-gold/60">Best for:</dt> <dd class="inline">Those who prefer depth and body</dd></div>
+              <div><dt class="inline text-gold/60">Best for:</dt> <dd class="inline">Richer coffee preferences</dd></div>
               <div><dt class="inline text-gold/60">Taste:</dt> <dd class="inline">Bold, full, resonant</dd></div>
               <div><dt class="inline text-gold/60">Tokyo mood:</dt> <dd class="inline">Evening stillness</dd></div>
               <div><dt class="inline text-gold/60">Gift impression:</dt> <dd class="inline">A strong and elegant statement</dd></div>
@@ -634,8 +634,8 @@
             <h3 class="font-heading text-xl lg:text-2xl text-cream font-light mb-1 min-h-[3.5rem]">Spring & Summer</h3>
             <p class="text-xs text-gray-text font-body leading-relaxed mb-3 min-h-[3rem]">A limited expression shaped by the season.</p>
             <dl class="text-xs text-gray-text/70 space-y-1">
-              <div><dt class="inline text-gold/60">Best for:</dt> <dd class="inline">Thoughtful gifting</dd></div>
-              <div><dt class="inline text-gold/60">Taste:</dt> <dd class="inline">Layered, expressive, evolving</dd></div>
+              <div><dt class="inline text-gold/60">Best for:</dt> <dd class="inline">Thoughtful, time-sensitive gifting</dd></div>
+              <div><dt class="inline text-gold/60">Taste:</dt> <dd class="inline">Layered, expressive, evolving with each season</dd></div>
               <div><dt class="inline text-gold/60">Tokyo mood:</dt> <dd class="inline">Temporal and elegant</dd></div>
               <div><dt class="inline text-gold/60">Gift impression:</dt> <dd class="inline">A seasonal memory of Tokyo</dd></div>
             </dl>
@@ -653,9 +653,9 @@
             <h3 class="font-heading text-xl lg:text-2xl text-cream font-light mb-1 min-h-[3.5rem]">Autumn & Winter</h3>
             <p class="text-xs text-gray-text font-body leading-relaxed mb-3 min-h-[3rem]">A deeper warmth drawn from the quieter months.</p>
             <dl class="text-xs text-gray-text/70 space-y-1">
-              <div><dt class="inline text-gold/60">Best for:</dt> <dd class="inline">Thoughtful gifting</dd></div>
-              <div><dt class="inline text-gold/60">Taste:</dt> <dd class="inline">Rich, enveloping, gently spiced</dd></div>
-              <div><dt class="inline text-gold/60">Tokyo mood:</dt> <dd class="inline">Warm light on a cold evening</dd></div>
+              <div><dt class="inline text-gold/60">Best for:</dt> <dd class="inline">Thoughtful, time-sensitive gifting</dd></div>
+              <div><dt class="inline text-gold/60">Taste:</dt> <dd class="inline">Layered, expressive, evolving with each season</dd></div>
+              <div><dt class="inline text-gold/60">Tokyo mood:</dt> <dd class="inline">Temporal and elegant</dd></div>
               <div><dt class="inline text-gold/60">Gift impression:</dt> <dd class="inline">A seasonal memory of Tokyo</dd></div>
             </dl>
           </div>
@@ -670,11 +670,11 @@
           <div class="p-4 bg-cream/5">
             <span class="inline-block text-xs tracking-luxe text-gold border border-gold/40 rounded-full px-3 py-1 mb-3 uppercase">Mild</span>
             <h3 class="font-heading text-xl lg:text-2xl text-cream font-light mb-1 min-h-[3.5rem]">Purpose Blend</h3>
-            <p class="text-xs text-gray-text font-body leading-relaxed mb-3 min-h-[3rem]">Coffee that connects. Shared cups, shared meaning.</p>
+            <p class="text-xs text-gray-text font-body leading-relaxed mb-3 min-h-[3rem]">Coffee that connects. Every cup supports inclusive employment in Tokyo.</p>
             <dl class="text-xs text-gray-text/70 space-y-1">
-              <div><dt class="inline text-gold/60">Best for:</dt> <dd class="inline">Meaningful gathering</dd></div>
-              <div><dt class="inline text-gold/60">Taste:</dt> <dd class="inline">Approachable, smooth, inviting</dd></div>
-              <div><dt class="inline text-gold/60">Tokyo mood:</dt> <dd class="inline">A warm conversation over slow coffee</dd></div>
+              <div><dt class="inline text-gold/60">Best for:</dt> <dd class="inline">Gatherings and shared moments</dd></div>
+              <div><dt class="inline text-gold/60">Taste:</dt> <dd class="inline">Open, easy, made for everyone</dd></div>
+              <div><dt class="inline text-gold/60">Tokyo mood:</dt> <dd class="inline">Quiet human connection</dd></div>
               <div><dt class="inline text-gold/60">Gift impression:</dt> <dd class="inline">A gift that says something about who you are</dd></div>
             </dl>
           </div>
@@ -689,12 +689,12 @@
           <div class="p-4 bg-cream/5">
             <span class="inline-block text-xs tracking-luxe text-gold border border-gold/40 rounded-full px-3 py-1 mb-3 uppercase">Fruity</span>
             <h3 class="font-heading text-xl lg:text-2xl text-cream font-light mb-1 min-h-[3.5rem]">Rescue Blend</h3>
-            <p class="text-xs text-gray-text font-body leading-relaxed mb-3 min-h-[3rem]">Every cup gives back.</p>
+            <p class="text-xs text-gray-text font-body leading-relaxed mb-3 min-h-[3rem]">Every cup brewed helps rescue animals find their home.</p>
             <dl class="text-xs text-gray-text/70 space-y-1">
-              <div><dt class="inline text-gold/60">Best for:</dt> <dd class="inline">Giving back with every sip</dd></div>
-              <div><dt class="inline text-gold/60">Taste:</dt> <dd class="inline">Mild, gentle, comforting</dd></div>
-              <div><dt class="inline text-gold/60">Tokyo mood:</dt> <dd class="inline">Kindness in a quiet city</dd></div>
-              <div><dt class="inline text-gold/60">Gift impression:</dt> <dd class="inline">A gift that gives twice</dd></div>
+              <div><dt class="inline text-gold/60">Best for:</dt> <dd class="inline">Meaningful gifting</dd></div>
+              <div><dt class="inline text-gold/60">Taste:</dt> <dd class="inline">Sweet, vibrant, warmly fruity</dd></div>
+              <div><dt class="inline text-gold/60">Tokyo mood:</dt> <dd class="inline">Hopeful and quietly warm</dd></div>
+              <div><dt class="inline text-gold/60">Gift impression:</dt> <dd class="inline">A cup that gives back to Tokyo</dd></div>
             </dl>
           </div>
         </div>
