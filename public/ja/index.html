@@ -628,8 +628,8 @@
         <!-- Silence -->
         <div class="text-center group" data-aos="fade-up" data-aos-delay="250">
           <div class="w-40 h-40 lg:w-52 lg:h-52 mx-auto overflow-hidden rounded-full mb-10 relative" style="box-shadow: 0 8px 30px rgba(0,0,0,0.2);">
-            <img src="https://images.unsplash.com/photo-1510707577719-ae7c14805e3a?w=400&q=80&fm=webp&fit=crop"
-                 alt="温かな光の中のエスプレッソ" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" decoding="async">
+            <img src="https://images.unsplash.com/photo-1598706437728-14916454bd55?w=400&q=80&auto=format&fit=crop"
+                 alt="静けさ" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" style="object-position: center 65%; transform: scale(2); transform-origin: 72% 90%;" loading="lazy" decoding="async">
           </div>
           <h3 class="font-brand text-2xl lg:text-3xl font-light text-gold tracking-wide-luxe mb-1">Silence</h3>
           <p class="text-xs text-cream/40 tracking-wide mb-3" style="letter-spacing: 0.08em;">静けさ</p>
@@ -1311,6 +1311,12 @@
 
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>
+    // モバイルでは左右アニメーションを fade-up に統一
+    if (window.innerWidth < 1024) {
+      document.querySelectorAll('[data-aos="fade-left"], [data-aos="fade-right"]').forEach(el => {
+        el.setAttribute('data-aos', 'fade-up');
+      });
+    }
     AOS.init({
       duration: 800,
       easing: 'ease-out-cubic',
