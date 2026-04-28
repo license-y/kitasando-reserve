@@ -18,6 +18,12 @@
   <!-- Favicon -->
   <link rel="icon" type="image/jpeg" href="../assets/images/KitasandoLOGO_Gold.jpg">
 
+  <!-- hreflang: 言語・地域ごとに適切なページをGoogleに伝える -->
+  <link rel="alternate" hreflang="en" href="https://kitasando-reserve.pages.dev/">
+  <link rel="alternate" hreflang="ja" href="https://kitasando-reserve.pages.dev/ja/">
+  <link rel="alternate" hreflang="x-default" href="https://kitasando-reserve.pages.dev/">
+  <link rel="canonical" href="https://kitasando-reserve.pages.dev/ja/">
+
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -124,9 +130,11 @@
     }
 
     .nav-scrolled {
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      background-color: rgba(42, 31, 36, 0.8);
+      background-color: rgba(30, 22, 26, 1);
+      border-bottom: 1px solid rgba(180, 140, 80, 0.2);
+    }
+    .nav-scrolled #menu-toggle {
+      color: #F5F0E8;
     }
 
     .img-soft {
@@ -158,11 +166,14 @@
     }
 
     .mobile-menu {
-      transform: translateX(100%);
-      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease;
+      background-color: #1e161a;
+      border-top: 1px solid rgba(180, 140, 80, 0.15);
     }
     .mobile-menu.open {
-      transform: translateX(0);
+      max-height: 420px;
     }
 
     .tracking-luxe { letter-spacing: 0.15em; }
@@ -360,7 +371,7 @@
   <!-- NAVIGATION -->
   <!-- ============================================ -->
   <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-500" aria-label="メインナビゲーション">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between h-20">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between h-16">
       <!-- Logo -->
       <a href="#hero" class="flex items-center">
         <img id="nav-logo" src="../assets/images/KitasandoReserve-black.jpg" alt="Kitasando Reserve" class="h-10 lg:h-12 transition-all duration-300" loading="eager">
@@ -385,16 +396,21 @@
       </button>
     </div>
 
-    <!-- Mobile menu overlay -->
-    <div id="mobile-menu" class="mobile-menu fixed inset-0 top-0 bg-black-primary/97 backdrop-blur-lg lg:hidden flex flex-col items-center justify-center gap-10">
-      <a href="#concept" class="mobile-link text-2xl font-heading tracking-luxe text-cream hover:text-gold transition-colors">Concept</a>
-      <a href="#story" class="mobile-link text-2xl font-heading tracking-luxe text-cream hover:text-gold transition-colors">Story</a>
-      <a href="#philosophy" class="mobile-link text-2xl font-heading tracking-luxe text-cream hover:text-gold transition-colors">Philosophy</a>
-      <a href="#culture" class="mobile-link text-2xl font-heading tracking-luxe text-cream hover:text-gold transition-colors">Culture</a>
-      <a href="#collection" class="mobile-link text-2xl font-heading tracking-luxe text-cream hover:text-gold transition-colors">Collection</a>
-      <a href="#visit" class="mobile-link text-2xl font-heading tracking-luxe text-cream hover:text-gold transition-colors">Visit</a>
-      <a href="#access" class="mobile-link text-2xl font-heading tracking-luxe text-cream hover:text-gold transition-colors">Access</a>
-      <a href="/" class="mobile-link text-lg font-brand tracking-luxe text-gold/60 hover:text-gold transition-colors">English</a>
+    <!-- Mobile dropdown menu -->
+    <div id="mobile-menu" class="mobile-menu lg:hidden">
+      <div class="flex flex-col py-2">
+        <a href="#concept" class="mobile-link px-8 py-3 text-sm tracking-luxe text-cream/80 hover:text-gold hover:bg-white/5 transition-colors">Concept</a>
+        <a href="#story" class="mobile-link px-8 py-3 text-sm tracking-luxe text-cream/80 hover:text-gold hover:bg-white/5 transition-colors">Story</a>
+        <a href="#philosophy" class="mobile-link px-8 py-3 text-sm tracking-luxe text-cream/80 hover:text-gold hover:bg-white/5 transition-colors">Philosophy</a>
+        <a href="#culture" class="mobile-link px-8 py-3 text-sm tracking-luxe text-cream/80 hover:text-gold hover:bg-white/5 transition-colors">Culture</a>
+        <a href="#collection" class="mobile-link px-8 py-3 text-sm tracking-luxe text-cream/80 hover:text-gold hover:bg-white/5 transition-colors">Collection</a>
+        <a href="#visit" class="mobile-link px-8 py-3 text-sm tracking-luxe text-cream/80 hover:text-gold hover:bg-white/5 transition-colors">Visit</a>
+        <a href="#access" class="mobile-link px-8 py-3 text-sm tracking-luxe text-cream/80 hover:text-gold hover:bg-white/5 transition-colors">Access</a>
+        <div class="mx-8 mt-1 pt-3 border-t border-gold/10">
+          <a href="/" class="mobile-link text-xs tracking-luxe text-gold/50 hover:text-gold transition-colors">English →</a>
+        </div>
+        <div class="pb-3"></div>
+      </div>
     </div>
   </nav>
 
@@ -1316,13 +1332,13 @@
         navbar.classList.add('nav-scrolled');
         navLinks.forEach(link => {
           link.classList.remove('text-white/80');
-          link.classList.add('text-cream/70');
+          link.classList.add('text-cream');
         });
       } else {
         navbar.classList.remove('nav-scrolled');
         navLinks.forEach(link => {
           link.classList.add('text-white/80');
-          link.classList.remove('text-cream/70');
+          link.classList.remove('text-cream');
         });
       }
       ticking = false;
@@ -1348,7 +1364,6 @@
       menuToggle.setAttribute('aria-expanded', menuOpen);
       menuIconOpen.classList.toggle('hidden', menuOpen);
       menuIconClose.classList.toggle('hidden', !menuOpen);
-      document.body.style.overflow = menuOpen ? 'hidden' : '';
     }
 
     menuToggle.addEventListener('click', toggleMenu);
