@@ -731,8 +731,8 @@
         <!-- Silence -->
         <div class="text-center group" data-aos="fade-up" data-aos-delay="250">
           <div class="w-40 h-40 lg:w-52 lg:h-52 mx-auto overflow-hidden rounded-full mb-10 relative" style="box-shadow: 0 8px 30px rgba(0,0,0,0.2);">
-            <img src="https://images.unsplash.com/photo-1510707577719-ae7c14805e3a?w=400&q=80&fm=webp&fit=crop"
-                 alt="Espresso in warm light" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" decoding="async">
+            <img src="https://images.unsplash.com/photo-1598706437728-14916454bd55?w=400&q=80&auto=format&fit=crop"
+                 alt="Silence" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" style="object-position: center 65%; transform: scale(2); transform-origin: 72% 90%;" loading="lazy" decoding="async">
           </div>
           <h3 class="font-heading text-2xl lg:text-3xl font-light text-gold tracking-wide-luxe mb-5">Silence</h3>
           <p class="text-sm text-gray-text leading-loose font-body max-w-[240px] mx-auto">
@@ -1385,9 +1385,9 @@
         <a href="https://www.instagram.com/green.beanscoffee/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="text-cream/40 hover:text-gold transition-colors duration-300">
           <i data-lucide="instagram" class="w-5 h-5"></i>
         </a>
-        <a href="tel:03-6447-0681" aria-label="Phone" class="text-cream/40 hover:text-gold transition-colors duration-300">
+        <span aria-label="Phone" class="text-cream/40">
           <i data-lucide="phone" class="w-5 h-5"></i>
-        </a>
+        </span>
         <a href="mailto:info@kitasandoreserve.com" aria-label="Email" class="text-cream/40 hover:text-gold transition-colors duration-300">
           <i data-lucide="mail" class="w-5 h-5"></i>
         </a>
@@ -1405,6 +1405,12 @@
   <!-- AOS init -->
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>
+    // モバイルでは左右アニメーションを fade-up に統一
+    if (window.innerWidth < 1024) {
+      document.querySelectorAll('[data-aos="fade-left"], [data-aos="fade-right"]').forEach(el => {
+        el.setAttribute('data-aos', 'fade-up');
+      });
+    }
     AOS.init({
       duration: 800,
       easing: 'ease-out-cubic',
