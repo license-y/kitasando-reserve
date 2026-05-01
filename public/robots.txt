@@ -1,6 +1,6 @@
 User-agent: *
 Allow: /
-Sitemap: https://kitasando-reserve.pages.dev/sitemap.xml
+Sitemap: https://kitasandoreserve.com/sitemap.xml
 
 # AI Search & Crawlers — explicitly welcomed
 User-agent: GPTBot

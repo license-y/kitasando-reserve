@@ -4,10 +4,10 @@
 
   <!-- 英語版 -->
   <url>
-    <loc>https://kitasando-reserve.pages.dev/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://kitasando-reserve.pages.dev/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://kitasando-reserve.pages.dev/ja/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://kitasando-reserve.pages.dev/"/>
+    <loc>https://kitasandoreserve.com/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kitasandoreserve.com/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://kitasandoreserve.com/ja/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kitasandoreserve.com/"/>
     <lastmod>2026-05-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
@@ -15,10 +15,10 @@
 
   <!-- 日本語版 -->
   <url>
-    <loc>https://kitasando-reserve.pages.dev/ja/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://kitasando-reserve.pages.dev/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://kitasando-reserve.pages.dev/ja/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://kitasando-reserve.pages.dev/"/>
+    <loc>https://kitasandoreserve.com/ja/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kitasandoreserve.com/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://kitasandoreserve.com/ja/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kitasandoreserve.com/"/>
     <lastmod>2026-05-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
