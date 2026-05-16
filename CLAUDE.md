@@ -132,6 +132,59 @@ Kitasando Reserve
 - 具体的な色、トランジション速度、影の強さは全体デザインに合わせて判断
 
 
+## SEO / MEO / AEO 対策（必ず守ること）
+
+コンテンツ編集・追加の際は、以下の方針に従ってキーワードと構造を意識すること。
+
+### ターゲットキーワード
+
+| キーワード | 用途 |
+|-----------|------|
+| 東京コーヒー | ブランドの核心軸。全セクションで自然に含める |
+| ギフト / コーヒーギフト | ギフトブランドとしての定義。FAQ・コレクションで必須 |
+| お土産 / 東京土産 | 日本語版で訪問者・帰省者向けクエリに対応 |
+| インバウンド / 訪日旅行者 | 英語版で "souvenir" "bring home from Tokyo" と組み合わせる |
+| 東京コーヒーを持ち帰る | AEO最重要ワード。FAQで直接回答できる構造にする |
+| 高級ブランド / ラグジュアリー | 富裕層・ビジネスギフト層向け。過剰にならず品格で表現 |
+| 富裕層 / プレミアム | 高価格帯ギフト需要。「静かな高品質」として訴求する |
+
+### SEO（検索エンジン最適化）
+
+- `<title>` と `<meta name="description">` に上記キーワードを自然に含める
+- 日本語版では「東京」「ギフト」「お土産」「北参道」を優先
+- 英語版では「Tokyo Coffee」「gift」「souvenir」「bring home」「inbound」を優先
+- `<h1>` は各ページで1つ。最重要キーワードを含めること
+- `<h2>` / `<h3>` にもキーワードを分散させる
+
+### MEO（マップ・ローカル検索最適化）
+
+- Schema.org の `CafeOrCoffeeShop` に住所・営業時間・電話番号を正確に記載する
+- 「北参道」「千駄ヶ谷」「ダガヤサンドウ」「渋谷区」のローカルキーワードを本文に含める
+- Google マップへのリンク（`https://www.google.com/maps/search/Green+Beans+Coffee+3-30-1+Sendagaya+Shibuya+Tokyo/`）をアクセスセクションに設置する
+- 「近くのコーヒー」「北参道 カフェ」「千駄ヶ谷 コーヒー」などの near-me クエリに対応できる文言を含める
+
+### AEO（アンサーエンジン最適化 / AI検索対策）
+
+AEOとは、ChatGPT・Gemini・Perplexity などの AI が質問に回答する際に、このサイトのコンテンツが引用・参照されやすくするための最適化。
+
+#### 必須対応
+- FAQセクションには必ず `FAQPage` の JSON-LD スキーマを設置する
+- FAQ の回答は「直接答えから始まる」構造にする（Yes/No → 理由 → 補足の順）
+- 以下のクエリに対応するFAQを常に維持する:
+  - 「東京コーヒーを持ち帰るには？」/ "How do I bring Tokyo coffee home?"
+  - 「Kitasando Reserve はどこで買える？」/ "Where can I buy Kitasando Reserve?"
+  - 「東京の高級コーヒーギフトは？」/ "What is a luxury coffee gift from Tokyo?"
+  - 「ビジネスギフトに使えますか？」/ "Is it suitable as a business gift?"
+  - 「外国人へのお土産に向いていますか？」/ "Good gift for international visitors?"
+  - 「ラグジュアリーブランドですか？」/ "Is it a luxury brand?"
+
+#### コンテンツの書き方
+- 回答は簡潔に。AI が切り取りやすい 2〜3 文の構造を意識する
+- 「はい/いいえ」で始まる回答はAEOに有利
+- ブランド名（Kitasando Reserve）・場所名（Green Beans Coffee、北参道）・固有名詞を回答内に必ず含める
+- FAQを追加・編集したら、必ず JSON-LD の `FAQPage` スキーマにも同じ内容を反映する
+
+
 ## ブランドの切り分け（必ず守ること）
 
 ### Green Beans Coffee (GBC)
