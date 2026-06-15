@@ -113,8 +113,14 @@ Kitasando Reserve
 
 ### 画像について
 
-- ユーザーからの指定がない場合、画像は、unsplash.com で適切なものを `/unsplash-image-finder` スキルを使用して、Unsplashの画像を検索し、その情報を使って設定する
-- unsplash.com の画像は最適化する。例えば、 https://images.unsplash.com/photo-learning-related?w=800&q=80 のような形
+- ユーザーからの指定がない場合、以下のコマンドでUnsplashから画像を検索して使用する
+  ```bash
+  node .claude/skills/unsplash-image-finder/unsplash-search.js "キーワード"
+  ```
+- APIキーは `.env.local` の `UNSPLASH_ACCESS_KEY` に設定済み（変更不要）
+- 動作確認は `node .claude/skills/unsplash-image-finder/unsplash-search.js --check` で実行
+- 取得した画像URLは `?w=800&q=80&fm=webp&fit=crop` の形式で最適化する
+  - Hero画像: `w=1920`、セクション画像: `w=800`〜`w=1200`、サムネイル: `w=400`
 - 画像リンクが切れていることが多いので確かめること
 
 ### ナビ部分について
