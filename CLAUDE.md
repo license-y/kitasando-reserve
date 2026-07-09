@@ -123,6 +123,20 @@ Kitasando Reserve
   - Hero画像: `w=1920`、セクション画像: `w=800`〜`w=1200`、サムネイル: `w=400`
 - 画像リンクが切れていることが多いので確かめること
 
+### 画像ファイル名の命名規則（必ず守ること）
+
+`public/assets/images/` 以下に画像を保存する際は、以下のルールに従うこと（Google画像検索対策）。
+
+- **小文字・ハイフン区切り**にする（アンダースコア `_` や PascalCase は使わない）
+  - 悪い例: `KitasandoLOGO_Gold.jpg` `concept_why-kitasando-reserve.jpg`
+  - 良い例: `kitasando-reserve-logo-gold.jpg`
+- **画像の内容が分かる説明的な名前**にする（`1.jpg` `IMG_1234.jpg` のような連番・汎用名は禁止）
+  - 悪い例: `district/1.jpg`
+  - 良い例: `district/dagayasando-street-tokyo.jpg`
+- 可能な範囲でターゲットキーワード（`tokyo` `coffee` `gift` `kitasando` 等）を自然に含める
+- 商品画像など順序管理が必要な場合は先頭に数字プレフィックスを付けてよいが、番号だけでなく内容を表す語も必ず含める（例: `1_reserve-blend.jpg`）
+- ファイルをリネームする際は `git mv` を使い、履歴を保持する。あわせてHTML内の参照（`src`属性・JSON-LD・favicon・og:image等）を英日両ページで漏れなく更新すること
+
 ### ナビ部分について
 
 ナビゲーションについて、特別な指示がない限り、以下の使用に従って作成すること。
