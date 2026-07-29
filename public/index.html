@@ -121,6 +121,10 @@
     .bg-flow-faq {
       background: linear-gradient(180deg, #2c2125 0%, #332628 32%, #352828 58%, #332628 100%);
     }
+    /* Step: FAQ bottom #332628 → Summary → Footer top #231a1e */
+    .bg-flow-summary {
+      background: linear-gradient(180deg, #332628 0%, #2c2224 35%, #27201f 65%, #231a1e 100%);
+    }
     /* Footer: deepest — step down from FAQ */
     .bg-flow-footer {
       background: linear-gradient(180deg, #231a1e 0%, #1e1519 50%, #1a1215 100%);
@@ -246,7 +250,13 @@
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://kitasandoreserve.com"
+        "item": "https://kitasandoreserve.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Kitasando Reserve — Tokyo Coffee Gift",
+        "item": "https://kitasandoreserve.com/"
       }
     ]
   }
@@ -647,6 +657,7 @@
         <a href="#collection" class="nav-link text-sm tracking-luxe text-white/80 hover:text-gold transition-colors duration-300">Collection</a>
         <a href="#visit" class="nav-link text-sm tracking-luxe text-white/80 hover:text-gold transition-colors duration-300">Visit</a>
         <a href="#faq" class="nav-link text-sm tracking-luxe text-white/80 hover:text-gold transition-colors duration-300">FAQ</a>
+        <a href="#summary" class="nav-link text-sm tracking-luxe text-white/80 hover:text-gold transition-colors duration-300">Summary</a>
         <a href="/ja/" class="text-sm tracking-luxe text-gold/50 hover:text-gold transition-colors duration-300 border border-gold/20 px-3 py-1 rounded-sm">日本語</a>
       </div>
 
@@ -667,6 +678,7 @@
         <a href="#collection" class="mobile-link px-8 py-3 text-sm tracking-luxe text-cream/80 hover:text-gold hover:bg-white/5 transition-colors">Collection</a>
         <a href="#visit" class="mobile-link px-8 py-3 text-sm tracking-luxe text-cream/80 hover:text-gold hover:bg-white/5 transition-colors">Visit</a>
         <a href="#faq" class="mobile-link px-8 py-3 text-sm tracking-luxe text-cream/80 hover:text-gold hover:bg-white/5 transition-colors">FAQ</a>
+        <a href="#summary" class="mobile-link px-8 py-3 text-sm tracking-luxe text-cream/80 hover:text-gold hover:bg-white/5 transition-colors">Summary</a>
         <div class="mx-8 mt-1 pt-3 border-t border-gold/10">
           <a href="/ja/" class="mobile-link text-xs tracking-luxe text-gold/50 hover:text-gold transition-colors">日本語 →</a>
         </div>
@@ -681,7 +693,7 @@
   <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
     <!-- Background image -->
     <div class="absolute inset-0">
-      <img src="https://images.unsplash.com/photo-1551610290-e153ec567dd8?w=1920&q=80&fm=webp&fit=crop"
+      <img src="assets/images/hero/dark-espresso-coffee-tokyo.webp"
            alt="Dark espresso coffee atmosphere" class="w-full h-full object-cover" loading="eager" decoding="async">
       <div class="hero-overlay absolute inset-0"></div>
     </div>
@@ -732,7 +744,7 @@
         <div data-aos="fade-right" data-aos-delay="200">
           <div class="gold-line mb-8"></div>
           <p class="text-base lg:text-lg text-gray-text leading-relaxed mb-6 font-body">
-            Tokyo Coffee is not defined by a single style, but by refinement, balance, and intention. It is where global coffee culture is reinterpreted through a uniquely Tokyo perspective — minimal, precise, and quietly sophisticated.
+            <strong class="text-cream font-medium">Kitasando Reserve is a Tokyo coffee gift label, roasted by Green Beans Coffee in Kitasando.</strong> Tokyo Coffee is not defined by a single style, but by refinement, balance, and intention. It is where global coffee culture is reinterpreted through a uniquely Tokyo perspective — minimal, precise, and quietly sophisticated.
           </p>
           <p class="text-base lg:text-lg text-cream/60 leading-relaxed font-body">
             At its purest expression, Tokyo Coffee becomes Kitasando Reserve — a gift you carry home from Tokyo.
@@ -742,7 +754,7 @@
         <!-- Right: image -->
         <div data-aos="fade-left" data-aos-delay="400" class="relative">
           <div class="aspect-[3/2] overflow-hidden img-soft">
-            <img src="https://images.unsplash.com/photo-1497515114629-f71d768fd07c?w=800&q=80&fm=webp&fit=crop"
+            <img src="assets/images/concept/dark-roast-coffee-beans.webp"
                  alt="Coffee beans dark roast" class="w-full h-full object-cover" loading="lazy" decoding="async">
           </div>
         </div>
@@ -781,8 +793,8 @@
           </div>
           <div class="order-1 lg:order-2" data-aos="fade-left">
             <div class="aspect-[4/3] overflow-hidden img-soft">
-              <img src="assets/images/district/silence.jpg"
-                   alt="Quiet Tokyo neighborhood" class="w-full h-full object-cover" loading="lazy" decoding="async">
+              <img src="assets/images/district/kitasando-quiet-alley-tokyo.jpg"
+                   alt="Quiet alley in Kitasando, Tokyo" class="w-full h-full object-cover" loading="lazy" decoding="async">
             </div>
           </div>
         </div>
@@ -791,8 +803,8 @@
         <div class="grid lg:grid-cols-2 gap-10 lg:gap-14 items-start">
           <div data-aos="fade-right" class="lg:pt-32">
             <div class="overflow-hidden img-soft lg:w-[90%]">
-              <img src="assets/images/district/tokyo.jpg"
-                   alt="Tokyo cityscape" class="w-full object-cover" loading="lazy" decoding="async">
+              <img src="assets/images/district/tokyo-cityscape-skyline.jpg"
+                   alt="Tokyo cityscape skyline" class="w-full object-cover" loading="lazy" decoding="async">
             </div>
           </div>
           <div data-aos="fade-left">
@@ -888,7 +900,7 @@
         <!-- Refinement -->
         <div class="text-center group" data-aos="fade-up" data-aos-delay="100">
           <div class="w-40 h-40 lg:w-52 lg:h-52 mx-auto overflow-hidden rounded-full mb-10 relative" style="box-shadow: 0 8px 30px rgba(0,0,0,0.2);">
-            <img src="https://images.unsplash.com/photo-1580933073521-dc49ac0d4e6a?w=400&q=80&fm=webp&fit=crop"
+            <img src="assets/images/philosophy/refined-simplicity-coffee.webp"
                  alt="Refined simplicity" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" decoding="async">
           </div>
           <h3 class="font-heading text-2xl lg:text-3xl font-light text-gold tracking-wide-luxe mb-5">Refinement</h3>
@@ -900,7 +912,7 @@
         <!-- Silence -->
         <div class="text-center group" data-aos="fade-up" data-aos-delay="250">
           <div class="w-40 h-40 lg:w-52 lg:h-52 mx-auto overflow-hidden rounded-full mb-10 relative" style="box-shadow: 0 8px 30px rgba(0,0,0,0.2);">
-            <img src="https://images.unsplash.com/photo-1598706437728-14916454bd55?w=400&q=80&auto=format&fit=crop"
+            <img src="assets/images/philosophy/silence-coffee-cup.webp"
                  alt="Silence" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" style="object-position: center 65%; transform: scale(2); transform-origin: 72% 90%;" loading="lazy" decoding="async">
           </div>
           <h3 class="font-heading text-2xl lg:text-3xl font-light text-gold tracking-wide-luxe mb-5">Silence</h3>
@@ -912,7 +924,7 @@
         <!-- Essence -->
         <div class="text-center group" data-aos="fade-up" data-aos-delay="400">
           <div class="w-40 h-40 lg:w-52 lg:h-52 mx-auto overflow-hidden rounded-full mb-10 relative" style="box-shadow: 0 8px 30px rgba(0,0,0,0.2);">
-            <img src="https://images.unsplash.com/photo-1512568400610-62da28bc8a13?w=400&q=80&fm=webp&fit=crop"
+            <img src="assets/images/philosophy/coffee-essence-pour.webp"
                  alt="Coffee essence pour" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" decoding="async">
           </div>
           <h3 class="font-heading text-2xl lg:text-3xl font-light text-gold tracking-wide-luxe mb-5">Essence</h3>
@@ -946,19 +958,19 @@
       <!-- Photo grid -->
       <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
         <div class="aspect-square overflow-hidden img-soft" data-aos="fade-up" data-aos-delay="100">
-          <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800&q=80&fm=webp&fit=crop"
+          <img src="assets/images/culture/warm-cafe-interior-tokyo.webp"
                alt="Warm café interior" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async">
         </div>
         <div class="aspect-square overflow-hidden img-soft" data-aos="fade-up" data-aos-delay="200">
-          <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?w=800&q=80&fm=webp&fit=crop"
+          <img src="assets/images/culture/latte-art-tokyo-coffee.webp"
                alt="Latte art" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async">
         </div>
         <div class="aspect-square overflow-hidden img-soft" data-aos="fade-up" data-aos-delay="300">
-          <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80&fm=webp&fit=crop"
+          <img src="assets/images/culture/coffee-table-tokyo.webp"
                alt="Coffee on table" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async">
         </div>
         <div class="aspect-square overflow-hidden img-soft" data-aos="fade-up" data-aos-delay="400">
-          <img src="https://images.unsplash.com/photo-1553292218-4892c2e7e1ae?w=800&q=80&fm=webp&fit=crop"
+          <img src="assets/images/culture/tokyo-coffee-culture-scene.webp"
                alt="Tokyo coffee culture" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async">
         </div>
       </div>
@@ -1608,6 +1620,34 @@
   </section>
 
   <!-- ============================================ -->
+  <!-- SUMMARY SECTION -->
+  <!-- ============================================ -->
+  <section id="summary" class="py-20 lg:py-28 bg-flow-summary">
+    <div class="max-w-3xl mx-auto px-8 lg:px-16">
+      <!-- Section label -->
+      <div class="mb-16" data-aos="fade-up">
+        <span class="text-xs tracking-luxe text-gold uppercase">09 — Summary</span>
+      </div>
+
+      <h2 class="font-heading text-4xl md:text-5xl lg:text-6xl font-light text-cream mb-10 text-center" data-aos="fade-up">
+        Kitasando Reserve, in Summary
+      </h2>
+
+      <div data-aos="fade-up" data-aos-delay="100">
+        <p class="text-base lg:text-lg text-gray-text leading-relaxed mb-6 font-body">
+          <strong class="text-cream font-medium">Kitasando Reserve is Tokyo's dedicated coffee gift label — roasted by Green Beans Coffee at a single, sign-free roastery in Kitasando, Sendagaya, Shibuya, and sold nowhere else.</strong> It sits at the intersection of place and craft: the quiet identity of <a href="#concept" class="text-gold/80 underline hover:text-gold transition-colors">Tokyo Coffee</a>, the <a href="#story" class="text-gold/80 underline hover:text-gold transition-colors">origin story of Kitasando and Dagayasando</a>, a <a href="#philosophy" class="text-gold/80 underline hover:text-gold transition-colors">philosophy of restraint</a>, and a <a href="#culture" class="text-gold/80 underline hover:text-gold transition-colors">culture built on silence</a>.
+        </p>
+        <p class="text-base lg:text-lg text-gray-text leading-relaxed mb-6 font-body">
+          The <a href="#collection" class="text-gold/80 underline hover:text-gold transition-colors">seven-blend collection</a> is built as a Tokyo souvenir and gift for inbound travelers and business occasions alike — easy to carry home, and found nowhere but Kitasando. Green Beans Coffee, the roastery behind it, is the <a href="https://greenbeanscoffeeambassador.com/en" target="_blank" rel="noopener" class="text-gold/80 underline hover:text-gold transition-colors">café and roastery</a> Kitasando Reserve was created to express.
+        </p>
+        <p class="text-base lg:text-lg text-cream/60 leading-relaxed font-body">
+          Still have questions? See the <a href="#faq" class="text-gold/80 underline hover:text-gold transition-colors">FAQ</a>, or <a href="#access" class="text-gold/80 underline hover:text-gold transition-colors">plan your visit to Green Beans Coffee in Kitasando</a> to bring Tokyo coffee home.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
   <!-- FOOTER -->
   <!-- ============================================ -->
   <footer class="py-16 lg:py-24 bg-flow-footer border-t border-white/5">
@@ -1618,6 +1658,20 @@
       <!-- Brand name -->
       <p class="font-heading text-2xl lg:text-3xl text-cream tracking-wide-luxe mb-3">Kitasando Reserve</p>
       <p class="font-heading text-sm text-gold/60 tracking-luxe uppercase mb-12">Tokyo Coffee Gift Origin — Kitasando, Green Beans Coffee</p>
+
+      <!-- Site links -->
+      <nav aria-label="Footer" class="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 mb-10 text-xs tracking-luxe text-cream/40">
+        <a href="#concept" class="hover:text-gold transition-colors">Concept</a>
+        <a href="#story" class="hover:text-gold transition-colors">Story</a>
+        <a href="#philosophy" class="hover:text-gold transition-colors">Philosophy</a>
+        <a href="#culture" class="hover:text-gold transition-colors">Culture</a>
+        <a href="#collection" class="hover:text-gold transition-colors">Collection</a>
+        <a href="#access" class="hover:text-gold transition-colors">Access</a>
+        <a href="#faq" class="hover:text-gold transition-colors">FAQ</a>
+        <a href="#summary" class="hover:text-gold transition-colors">Summary</a>
+        <a href="https://greenbeanscoffeeambassador.com/en" target="_blank" rel="noopener" class="hover:text-gold transition-colors">Green Beans Coffee</a>
+        <a href="/ja/" class="hover:text-gold transition-colors">日本語</a>
+      </nav>
 
       <!-- Social / Contact -->
       <div class="flex items-center justify-center gap-6 mb-12">

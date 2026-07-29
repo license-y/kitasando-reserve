@@ -112,6 +112,9 @@
     .bg-flow-faq {
       background: linear-gradient(180deg, #2c2125 0%, #332628 32%, #352828 58%, #332628 100%);
     }
+    .bg-flow-summary {
+      background: linear-gradient(180deg, #332628 0%, #2c2224 35%, #27201f 65%, #231a1e 100%);
+    }
     .bg-flow-footer {
       background: linear-gradient(180deg, #231a1e 0%, #1e1519 50%, #1a1215 100%);
     }
@@ -213,6 +216,12 @@
         "@type": "ListItem",
         "position": 1,
         "name": "ホーム",
+        "item": "https://kitasandoreserve.com/ja/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Kitasando Reserve（キタサンドウ・リザーブ）| 北参道コーヒーギフト",
         "item": "https://kitasandoreserve.com/ja/"
       }
     ]
@@ -584,6 +593,7 @@
         <a href="#collection" class="nav-link text-sm tracking-luxe text-white/80 hover:text-gold transition-colors duration-300">Collection</a>
         <a href="#visit" class="nav-link text-sm tracking-luxe text-white/80 hover:text-gold transition-colors duration-300">Visit</a>
         <a href="#faq" class="nav-link text-sm tracking-luxe text-white/80 hover:text-gold transition-colors duration-300">FAQ</a>
+        <a href="#summary" class="nav-link text-sm tracking-luxe text-white/80 hover:text-gold transition-colors duration-300">Summary</a>
         <a href="/" class="text-sm tracking-luxe text-gold/50 hover:text-gold transition-colors duration-300 border border-gold/20 px-3 py-1 rounded-sm">EN</a>
       </div>
 
@@ -604,6 +614,7 @@
         <a href="#collection" class="mobile-link px-8 py-3 text-sm tracking-luxe text-cream/80 hover:text-gold hover:bg-white/5 transition-colors">Collection</a>
         <a href="#visit" class="mobile-link px-8 py-3 text-sm tracking-luxe text-cream/80 hover:text-gold hover:bg-white/5 transition-colors">Visit</a>
         <a href="#faq" class="mobile-link px-8 py-3 text-sm tracking-luxe text-cream/80 hover:text-gold hover:bg-white/5 transition-colors">FAQ</a>
+        <a href="#summary" class="mobile-link px-8 py-3 text-sm tracking-luxe text-cream/80 hover:text-gold hover:bg-white/5 transition-colors">Summary</a>
         <div class="mx-8 mt-1 pt-3 border-t border-gold/10">
           <a href="/" class="mobile-link text-xs tracking-luxe text-gold/50 hover:text-gold transition-colors">English →</a>
         </div>
@@ -617,7 +628,7 @@
   <!-- ============================================ -->
   <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
     <div class="absolute inset-0">
-      <img src="https://images.unsplash.com/photo-1551610290-e153ec567dd8?w=1920&q=80&fm=webp&fit=crop"
+      <img src="../assets/images/hero/dark-espresso-coffee-tokyo.webp"
            alt="深みのあるエスプレッソの情景" class="w-full h-full object-cover" loading="eager" decoding="async">
       <div class="hero-overlay absolute inset-0"></div>
     </div>
@@ -665,7 +676,7 @@
         <div data-aos="fade-right" data-aos-delay="200">
           <div class="gold-line mb-8"></div>
           <p class="text-base lg:text-lg text-gray-text leading-relaxed mb-6" style="line-height: 2;">
-            東京コーヒーはひとつのスタイルでは定義されない。世界各地のコーヒー文化を東京独自の視点で再解釈したもの——ミニマルで精度が高く静かに洗練されている。
+            <strong class="text-cream font-medium">Kitasando Reserve（キタサンドウ・リザーブ）は、東京・北参道の Green Beans Coffee が手がけるコーヒーギフト専用ブランドだ。</strong>東京コーヒーはひとつのスタイルでは定義されない。世界各地のコーヒー文化を東京独自の視点で再解釈したもの——ミニマルで精度が高く静かに洗練されている。
           </p>
           <p class="text-base lg:text-lg text-cream/60 leading-relaxed" style="line-height: 2;">
             その最も純粋な表現が——Kitasando Reserve。東京から持ち帰るギフト。
@@ -674,7 +685,7 @@
 
         <div data-aos="fade-left" data-aos-delay="400" class="relative">
           <div class="aspect-[3/2] overflow-hidden img-soft">
-            <img src="https://images.unsplash.com/photo-1497515114629-f71d768fd07c?w=800&q=80&fm=webp&fit=crop"
+            <img src="../assets/images/concept/dark-roast-coffee-beans.webp"
                  alt="深煎りのコーヒー豆" class="w-full h-full object-cover" loading="lazy" decoding="async">
           </div>
         </div>
@@ -714,8 +725,8 @@
           </div>
           <div class="order-1 md:order-2" data-aos="fade-left">
             <div class="aspect-[4/3] overflow-hidden img-soft">
-              <img src="../assets/images/district/silence.jpg"
-                   alt="東京の静かな路地" class="w-full h-full object-cover" loading="lazy" decoding="async">
+              <img src="../assets/images/district/kitasando-quiet-alley-tokyo.jpg"
+                   alt="北参道の静かな路地" class="w-full h-full object-cover" loading="lazy" decoding="async">
             </div>
           </div>
         </div>
@@ -724,8 +735,8 @@
         <div class="grid md:grid-cols-2 gap-10 md:gap-14 items-start">
           <div data-aos="fade-right" class="md:pt-32">
             <div class="overflow-hidden img-soft lg:w-[90%]">
-              <img src="../assets/images/district/tokyo.jpg"
-                   alt="東京の街並み" class="w-full object-cover" loading="lazy" decoding="async">
+              <img src="../assets/images/district/tokyo-cityscape-skyline.jpg"
+                   alt="東京の街並みスカイライン" class="w-full object-cover" loading="lazy" decoding="async">
             </div>
           </div>
           <div data-aos="fade-left">
@@ -819,7 +830,7 @@
         <!-- Refinement -->
         <div class="text-center group" data-aos="fade-up" data-aos-delay="100">
           <div class="w-40 h-40 lg:w-52 lg:h-52 mx-auto overflow-hidden rounded-full mb-10 relative" style="box-shadow: 0 8px 30px rgba(0,0,0,0.2);">
-            <img src="https://images.unsplash.com/photo-1580933073521-dc49ac0d4e6a?w=400&q=80&fm=webp&fit=crop"
+            <img src="../assets/images/philosophy/refined-simplicity-coffee.webp"
                  alt="洗練されたシンプリシティ" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" decoding="async">
           </div>
           <h3 class="font-brand text-2xl lg:text-3xl font-light text-gold tracking-wide-luxe mb-1">Refinement</h3>
@@ -832,7 +843,7 @@
         <!-- Silence -->
         <div class="text-center group" data-aos="fade-up" data-aos-delay="250">
           <div class="w-40 h-40 lg:w-52 lg:h-52 mx-auto overflow-hidden rounded-full mb-10 relative" style="box-shadow: 0 8px 30px rgba(0,0,0,0.2);">
-            <img src="https://images.unsplash.com/photo-1598706437728-14916454bd55?w=400&q=80&auto=format&fit=crop"
+            <img src="../assets/images/philosophy/silence-coffee-cup.webp"
                  alt="静けさ" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" style="object-position: center 65%; transform: scale(2); transform-origin: 72% 90%;" loading="lazy" decoding="async">
           </div>
           <h3 class="font-brand text-2xl lg:text-3xl font-light text-gold tracking-wide-luxe mb-1">Silence</h3>
@@ -845,7 +856,7 @@
         <!-- Essence -->
         <div class="text-center group" data-aos="fade-up" data-aos-delay="400">
           <div class="w-40 h-40 lg:w-52 lg:h-52 mx-auto overflow-hidden rounded-full mb-10 relative" style="box-shadow: 0 8px 30px rgba(0,0,0,0.2);">
-            <img src="https://images.unsplash.com/photo-1512568400610-62da28bc8a13?w=400&q=80&fm=webp&fit=crop"
+            <img src="../assets/images/philosophy/coffee-essence-pour.webp"
                  alt="コーヒーのエッセンス" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" decoding="async">
           </div>
           <h3 class="font-brand text-2xl lg:text-3xl font-light text-gold tracking-wide-luxe mb-1">Essence</h3>
@@ -878,19 +889,19 @@
 
       <div class="grid grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-8">
         <div class="aspect-square overflow-hidden img-soft" data-aos="fade-up" data-aos-delay="100">
-          <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800&q=80&fm=webp&fit=crop"
+          <img src="../assets/images/culture/warm-cafe-interior-tokyo.webp"
                alt="温かなカフェの内装" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async">
         </div>
         <div class="aspect-square overflow-hidden img-soft" data-aos="fade-up" data-aos-delay="200">
-          <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?w=800&q=80&fm=webp&fit=crop"
+          <img src="../assets/images/culture/latte-art-tokyo-coffee.webp"
                alt="ラテアート" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async">
         </div>
         <div class="aspect-square overflow-hidden img-soft" data-aos="fade-up" data-aos-delay="300">
-          <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80&fm=webp&fit=crop"
+          <img src="../assets/images/culture/coffee-table-tokyo.webp"
                alt="テーブルのコーヒー" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async">
         </div>
         <div class="aspect-square overflow-hidden img-soft" data-aos="fade-up" data-aos-delay="400">
-          <img src="https://images.unsplash.com/photo-1553292218-4892c2e7e1ae?w=800&q=80&fm=webp&fit=crop"
+          <img src="../assets/images/culture/tokyo-coffee-culture-scene.webp"
                alt="東京のコーヒーカルチャー" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async">
         </div>
       </div>
@@ -1552,6 +1563,36 @@
   </section>
 
   <!-- ============================================ -->
+  <!-- SUMMARY SECTION -->
+  <!-- ============================================ -->
+  <section id="summary" class="py-20 lg:py-28 bg-flow-summary">
+    <div class="max-w-3xl mx-auto px-8 lg:px-16">
+      <div class="mb-16" data-aos="fade-up">
+        <span class="text-xs tracking-luxe text-gold uppercase">09 — まとめ</span>
+      </div>
+
+      <h2 class="font-brand text-4xl md:text-5xl lg:text-6xl font-light text-cream mb-4 text-center" data-aos="fade-up">
+        Kitasando Reserve まとめ
+      </h2>
+      <p class="text-center text-sm text-gold/70 tracking-wide mb-12" data-aos="fade-up" style="letter-spacing: 0.06em;">
+        北参道リザーブ・東京コーヒーギフトの要点
+      </p>
+
+      <div data-aos="fade-up" data-aos-delay="100">
+        <p class="text-base lg:text-lg text-gray-text leading-relaxed mb-6" style="line-height: 2;">
+          <strong class="text-cream font-medium">Kitasando Reserve（キタサンドウ・リザーブ／北参道リザーブ）は、東京・北参道の看板のないロースタリー Green Beans Coffee がつくる、コーヒーギフト専用ブランドだ。</strong>店舗はここ一箇所のみ。オンライン販売もない。<a href="#concept" class="text-gold/80 underline hover:text-gold transition-colors">東京コーヒーという概念</a>と<a href="#story" class="text-gold/80 underline hover:text-gold transition-colors">北参道・ダガヤサンドウという土地の物語</a>、<a href="#philosophy" class="text-gold/80 underline hover:text-gold transition-colors">削ぎ落とす哲学</a>、<a href="#culture" class="text-gold/80 underline hover:text-gold transition-colors">静けさという文化</a>——その交差点に立つブランドだ。
+        </p>
+        <p class="text-base lg:text-lg text-gray-text leading-relaxed mb-6" style="line-height: 2;">
+          <a href="#collection" class="text-gold/80 underline hover:text-gold transition-colors">全7種のコレクション</a>は、東京土産やビジネスギフト、インバウンド向けの手土産として持ち帰りやすく設計されている。焙煎元の Green Beans Coffee は、<a href="https://greenbeanscoffeeambassador.com" target="_blank" rel="noopener" class="text-gold/80 underline hover:text-gold transition-colors">千駄ヶ谷のカフェ＆ロースタリー</a>——Kitasando Reserve が体現する技術と文化の土台だ。
+        </p>
+        <p class="text-base lg:text-lg text-cream/60 leading-relaxed" style="line-height: 2;">
+          さらに詳しくは<a href="#faq" class="text-gold/80 underline hover:text-gold transition-colors">よくある質問</a>へ。東京コーヒーを持ち帰りたい方は<a href="#access" class="text-gold/80 underline hover:text-gold transition-colors">北参道 Green Beans Coffee へのアクセス</a>をご覧ください。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
   <!-- FOOTER -->
   <!-- ============================================ -->
   <footer class="py-16 lg:py-24 bg-flow-footer border-t border-white/5">
@@ -1560,6 +1601,20 @@
 
       <p class="font-brand text-2xl lg:text-3xl text-cream tracking-wide-luxe mb-3"><abbr title="キタサンドウ・リザーブ／北参道リザーブ" style="text-decoration:none;">Kitasando Reserve</abbr></p>
       <p class="text-sm text-gold/60 tracking-luxe uppercase mb-12" style="letter-spacing: 0.1em;">東京コーヒーギフトの原点——北参道 Green Beans Coffee</p>
+
+      <!-- サイト内リンク -->
+      <nav aria-label="フッターナビゲーション" class="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 mb-10 text-xs tracking-luxe text-cream/40">
+        <a href="#concept" class="hover:text-gold transition-colors">コンセプト</a>
+        <a href="#story" class="hover:text-gold transition-colors">ストーリー</a>
+        <a href="#philosophy" class="hover:text-gold transition-colors">哲学</a>
+        <a href="#culture" class="hover:text-gold transition-colors">カルチャー</a>
+        <a href="#collection" class="hover:text-gold transition-colors">コレクション</a>
+        <a href="#access" class="hover:text-gold transition-colors">アクセス</a>
+        <a href="#faq" class="hover:text-gold transition-colors">よくある質問</a>
+        <a href="#summary" class="hover:text-gold transition-colors">まとめ</a>
+        <a href="https://greenbeanscoffeeambassador.com" target="_blank" rel="noopener" class="hover:text-gold transition-colors">Green Beans Coffee</a>
+        <a href="/" class="hover:text-gold transition-colors">English</a>
+      </nav>
 
       <div class="flex items-center justify-center gap-6 mb-12">
         <a href="https://www.instagram.com/green.beanscoffee/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="text-cream/40 hover:text-gold transition-colors duration-300">
@@ -1573,7 +1628,6 @@
         </span>
       </div>
 
-      <a href="/" class="text-xs text-cream/20 hover:text-gold/50 transition-colors tracking-wide block mb-4" style="letter-spacing: 0.08em;">English</a>
       <p class="text-xs text-cream/20 tracking-wide">&copy; 2026 Kitasando Reserve. All rights reserved.</p>
     </div>
   </footer>
